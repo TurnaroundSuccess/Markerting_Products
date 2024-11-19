@@ -14,8 +14,14 @@
             padding: 0;
             background-color: #f4f4f9;
         }
+		.container {
+		width: 100%;
+		max-width: 100%; /*Ensures it doesn't exceed the screen size*/
+		box-sizing: border-box; /*Includes Padding in width calculations*/
+		}
         header {
             display: flex;
+			flex-wrap: wrap; /* Ensures items wrap on smaller screens*/
             align-items: center;
             justify-content: space-between;
             background-color: #333;
@@ -33,7 +39,7 @@
         }
         nav {
             display: flex;
-			margin-right: 200px;
+			margin-right: 170px;
             gap: 15px;
         }
         nav a {
