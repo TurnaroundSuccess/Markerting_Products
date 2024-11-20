@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electronics & Gadgets</title>
-    <meta name="keywords" content="electronics, gadgets, smartphone, wireless headphones, tech products, Turnaround Success, latest gadgets, AirPods, Samsung Galaxy">
+    <meta name="keywords" content="electronics, gadgets, smartphone, wireless headphones, tech products, Turnaround Success, latest gadgets, AirPods, Samsung Galaxy, electronics, gadgets, smartphones, tablets, laptops, smartwatches, Bluetooth speakers, wireless earbuds, gaming consoles, digital cameras, drones, smart home devices, fitness trackers, power banks, charging cables, portable chargers, 4K TVs, LED TVs, headphones, noise-canceling headphones, VR headsets, smart thermostats, robotic vacuum cleaners, wearable technology, action cameras, streaming devices, home security cameras, smart light bulbs, gaming keyboards, gaming mice, computer accessories, tech accessories, phone cases, phone accessories, USB drives, external hard drives, SSD drives, 3D printers, wireless chargers, car chargers, gaming headsets, PC components, motherboards, graphics cards, processors, webcams, microphones, home audio systems, surround sound systems, Bluetooth adapters, computer monitors, curved monitors, 5G phones, AI devices, voice assistants, Alexa devices, Google Home, Apple devices, MacBooks, Android phones, Windows laptops, gaming laptops, mechanical keyboards, ergonomic keyboards, wireless mice, gaming monitors, budget smartphones, premium smartphones, photography equipment, video editing equipment, streaming microphones, live streaming cameras, projector screens, home theaters, soundbars, portable projectors, HDMI cables, screen protectors, smart locks, wearable fitness trackers, baby monitors, tech gadgets for kids, educational tech, office gadgets, productivity gadgets, portable speakers, travel gadgets, waterproof gadgets, solar chargers, eco-friendly gadgets, rugged gadgets, drones for beginners, professional drones, smartphone stabilizers, gimbals, wireless gaming headsets, Wi-Fi routers, mesh Wi-Fi systems, cable management tools, tech cleaning kits, computer cleaning kits, thermal paste, CPU coolers, gaming chairs, ergonomic chairs, standing desks, desk organizers, laptop stands, USB hubs, docking stations, laptop cooling pads, tech gifts, holiday tech deals, refurbished gadgets, certified refurbished electronics, affordable electronics, premium gadgets, flagship phones, mid-range smartphones, budget tech, top-rated electronics, bestselling gadgets, latest tech trends, innovative gadgets, tech news, electronics reviews, best gadgets 2024, future gadgets, sustainable electronics, renewable energy gadgets, tech for remote work, tech for students, tech for gamers, audio gadgets, visual gadgets, high-resolution screens, waterproof cameras, anti-theft backpacks, tech-savvy accessories, wireless earbuds for sports, noise isolation earbuds, smart health gadgets, tech for fitness, sleep trackers, tech for travel, tech for cars, car tech accessories, dash cams, radar detectors, GPS devices, tech for photography, tech for videography, music production gadgets, podcasting gadgets, virtual reality gadgets, augmented reality devices, gaming PCs, prebuilt gaming PCs, custom gaming PCs, all-in-one computers, foldable smartphones, 2-in-1 laptops, touchscreen laptops, smart kitchen gadgets, tech for home offices, tech for classrooms, tech for streaming, live broadcasting tools, gadget deals, electronic accessories, tech upgrades, electronic gadgets for work, tech gadgets for entertainment, digital art tools, drawing tablets, pen displays, smart TVs, OLED TVs, QLED TVs, budget TVs, wireless adapters, portable SSDs, rugged external drives, gaming peripherals, RGB lighting accessories">
     <style>
-        /* Basic styling */
+          /* Basic styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
         }
-        /* Header and navigation styling */
+		.container {
+		width: 100%;
+		max-width: 100%; /*Ensures it doesn't exceed the screen size*/
+		box-sizing: border-box; /*Includes Padding in width calculations*/
+		}
         header {
             display: flex;
+			flex-wrap: wrap; /* Ensures items wrap on smaller screens*/
             align-items: center;
+            justify-content: space-between;
             background-color: #333;
             padding: 10px 20px;
             color: white;
@@ -32,7 +38,8 @@
         }
         nav {
             display: flex;
-            gap: 15px;
+			margin-right:0px;
+            gap: 10px;
         }
         nav a {
             color: white;
@@ -42,30 +49,35 @@
         nav a:hover {
             text-decoration: underline;
         }
-        /* Content styling */
         .content {
-            padding: 20px;
+            padding: 5px;
+        }
+        .product-category {
+            margin: 20px 0;
         }
         .product-category h2 {
             color: #333;
             font-size: 24px;
             margin-top: 0;
+            text-align: center;
         }
-        /* Grid layout styling for 8 rows and 4 columns */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
         }
         .product {
-            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: #fff;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
         .product img {
-            width: 100px;
+            width: 150px;
             height: auto;
             margin-bottom: 10px;
             border-radius: 5px;
@@ -74,22 +86,46 @@
             color: #1a73e8;
             text-decoration: none;
             font-weight: bold;
+            margin-top: 10px;
         }
         .product a:hover {
             text-decoration: underline;
         }
         .product p {
-            margin: 5px 0;
             font-size: 14px;
+            color: #333;
         }
-        /* Disclaimer styling */
         .disclaimer {
             font-size: 12px;
             color: #666;
-            padding: 20px;
+            padding: 10px;
             background-color: #f1f1f1;
             text-align: center;
             border-top: 1px solid #ddd;
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 16px;
+            }
+            nav {
+                gap: 10px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 14px;
+            }
+            nav a {
+                font-size: 12px;
+            }
+            .disclaimer {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -110,7 +146,7 @@
 
 <!-- Affiliate disclaimer -->
 <div class="disclaimer">
-    <p>Empowering your path to informed purchases and savings. Purchases through our links may earn us a commission.</p>
+    <p>Turnaround Success is dedicated to empowering your path to informed purchases and savings—at no additional cost to you. We may earn a commission from purchases made through our affiliate links, including those from Amazon.</p>
 </div>
 
 <!-- Top Electronics & Gadgets content -->
@@ -346,13 +382,18 @@
                 <a href="https://amzn.to/3YYX9fm" target="_blank">Phone Holders for Your Car</a>
                 <p>Miracase Phone Holders for Your Car with Newest Metal Hook Clip, Air Vent Cell Phone Car Mount, Universal Automobile Cradle Fit for iPhone Android and All Smartphones, Dark Black</p>
             </div>
+			<div class="product">
+                <img src="Bluetooth Wireless Music Eye Mask.jpg" alt="Bluetooth Wireless Music Eye Mask">
+                <a href="https://amzn.to/4fVdoQf" target="_blank">Bluetooth Wireless Music Eye Mask</a>
+                <p>LC-dolida Sleep Headphones, 3D Sleep Mask Bluetooth Wireless Music Eye Mask, Sleeping Headphones for Side Sleepers Sleep Mask with Bluetooth Headphones Ultra-Thin Stereo Speakers Perfect for Sleeping</p>
+            </div>
         </div>
     </div>
 </div>
 
 <!-- Affiliate disclaimer -->
 <div class="disclaimer">
-    <p>Empowering your path to informed purchases and savings. Purchases through our links may earn us a commission.</p>
+    <p>Turnaround Success is dedicated to empowering your path to informed purchases and savings—at no additional cost to you. We may earn a commission from purchases made through our affiliate links, including those from Amazon.</p>
 </div>
 
 </body>
