@@ -13,12 +13,18 @@
             padding: 0;
             background-color: #f4f4f9;
         }
-        /* Header and navigation styling */
+		.container {
+		width: 100%;
+		max-width: 100%; /*Ensures it doesn't exceed the screen size*/
+		box-sizing: border-box; /*Includes Padding in width calculations*/
+		}
         header {
             display: flex;
+			flex-wrap: wrap; /* Ensures items wrap on smaller screens*/
             align-items: center;
+            justify-content: space-between;
             background-color: #333;
-            padding: 10px 20px;
+            padding: 15px 20px;
             color: white;
         }
         header img {
@@ -32,7 +38,8 @@
         }
         nav {
             display: flex;
-            gap: 15px;
+			margin-right:0px;
+            gap: 10px;
         }
         nav a {
             color: white;
@@ -42,30 +49,35 @@
         nav a:hover {
             text-decoration: underline;
         }
-        /* Content styling */
         .content {
-            padding: 20px;
+            padding: 5px;
+        }
+        .product-category {
+            margin: 20px 0;
         }
         .product-category h2 {
             color: #333;
             font-size: 24px;
             margin-top: 0;
+            text-align: center;
         }
-        /* Grid layout styling for 8 rows and 4 columns */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
         }
         .product {
-            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: #fff;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
         .product img {
-            width: 100px;
+            width: 150px;
             height: auto;
             margin-bottom: 10px;
             border-radius: 5px;
@@ -74,22 +86,46 @@
             color: #1a73e8;
             text-decoration: none;
             font-weight: bold;
+            margin-top: 10px;
         }
         .product a:hover {
             text-decoration: underline;
         }
         .product p {
-            margin: 5px 0;
             font-size: 14px;
+            color: #333;
         }
-        /* Disclaimer styling */
         .disclaimer {
             font-size: 12px;
             color: #666;
-            padding: 20px;
+            padding: 10px;
             background-color: #f1f1f1;
             text-align: center;
             border-top: 1px solid #ddd;
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 16px;
+            }
+            nav {
+                gap: 10px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 14px;
+            }
+            nav a {
+                font-size: 12px;
+            }
+            .disclaimer {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
